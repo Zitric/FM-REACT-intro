@@ -1,6 +1,8 @@
 import React from "react";
 import { render } from "react-dom";
-import { Router } from "@reach/router";
+import { Router, Link } from "@reach/router";
+// Reach router is simillar to react router but is better for accesibility
+// Reach router show the route match the most, the order doesn't matter
 
 import SearchParams from "./SearchParams";
 import Details from "./Details";
@@ -8,7 +10,11 @@ import Details from "./Details";
 const App = () => (
   <React.StrictMode>
     <div>
-      <h1 id="something-important">Adopt Me!</h1>
+      <header>
+        <Link to="/">
+          <h1 id="something-important">Adopt Me!</h1>
+        </Link>
+      </header>
       <Router>
         <SearchParams path="/" />
         <Details path="/details/:id" />
