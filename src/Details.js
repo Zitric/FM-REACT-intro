@@ -33,7 +33,21 @@ class Details extends React.Component {
     );
   }
 
-  render() {}
+  render() {
+    const { loading, animal, breed, location, description, name } = this.state;
+    return loading ? (
+      <h1>Loading</h1>
+    ) : (
+      <div className="details">
+        <div>
+          <h1>{name}</h1>
+          <h2>{`${animal} - ${breed} - ${location}`}</h2>
+          <button>Addopt {name}</button>
+          <p>{description}</p>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default Details;
