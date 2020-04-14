@@ -39,7 +39,7 @@ class Details extends React.Component {
       media,
     } = this.state;
     return loading ? (
-      <h1>Loading</h1>
+      <h1>Loading ...</h1>
     ) : (
       <div className="details">
         <Carousel media={media} />
@@ -54,4 +54,10 @@ class Details extends React.Component {
   }
 }
 
-export default Details;
+export default function DetailsWithErrorBoundary(props) {
+  return (
+    <ErrorBoundary>
+      <Details {...props} />
+    </ErrorBoundary>
+  );
+}
