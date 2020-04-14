@@ -1,7 +1,7 @@
 // Mostly code from reactjs.org/docs/error-boundaries.html
 
 import React from "react";
-import { Link } from "@react/router";
+import { Link } from "@reach/router";
 
 class ErrorBoundary extends React.Component {
   state = { hasError: false };

@@ -1,6 +1,7 @@
 import React from "react";
 import pet from "@frontendmasters/pet";
 import Carousel from "./Carousel";
+import ErrorBoundary from "./ErrorBoundary";
 
 // Function component
 // const Details = (props) => (
