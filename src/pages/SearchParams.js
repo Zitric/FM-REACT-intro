@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import pet, { ANIMALS } from "@frontendmasters/pet";
-import Results from "./Results";
-import useDropdown from "./useDropdown";
+
+import Results from "../components/Results";
+import useDropdown from "../components/useDropdown";
 
 const SearchParams = () => {
   // THIS IS A HOOK

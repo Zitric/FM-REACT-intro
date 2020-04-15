@@ -4,8 +4,8 @@ import { Router, Link } from "@reach/router";
 // Reach router is simillar to react router but is better for accesibility
 // Reach router show the route match the most, the order doesn't matter
 
-import SearchParams from "./SearchParams";
-import Details from "./Details";
+import SearchParams from "../pages/SearchParams";
+import Details from "../pages/Details";
 
 const App = () => (
   <React.StrictMode>
