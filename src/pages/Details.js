@@ -3,6 +3,7 @@ import pet from "@frontendmasters/pet";
 
 import Carousel from "../components/Carousel";
 import ErrorBoundary from "../errors/ErrorBoundary";
+import ThemeContext from "../context/ThemeContext";
 
 // Function component
 // const Details = (props) => (
@@ -49,7 +50,11 @@ class Details extends React.Component {
         <div>
           <h1>{name}</h1>
           <h2>{`${animal} - ${breed} - ${location}`}</h2>
-          <button>Addopt {name}</button>
+          <ThemeContext.Consumer>
+            {([theme]) => (
+              <button style={{ backgroundColor: theme }}>Addopt {name}</button>
+            )}
+          </ThemeContext.Consumer>
           <p>{description}</p>
         </div>
       </div>
