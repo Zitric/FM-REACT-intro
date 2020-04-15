@@ -1,7 +1,7 @@
 // Mostly code from reactjs.org/docs/error-boundaries.html
 
 import React from "react";
-import { Link } from "@reach/router";
+import { Link, navigate } from "@reach/router";
 
 class ErrorBoundary extends React.Component {
   state = { hasError: false };
@@ -14,8 +14,17 @@ class ErrorBoundary extends React.Component {
     console.log("ErrorBoundary caught an error", error, info);
   }
 
+  // It is call when props or state change
+  componentDidUpdate() {
+    if (this.state.hasError) {
+      setTimeout(() => navigate("/"), 5000);
+    }
+  }
+
   render() {
-    return this.state.hasError ? (
+    const { hasError } = this.state;
+
+    return hasError ? (
       <h1>
         There was an error with this listing. <Link to="/">Click here</Link> to
         go back to the home page or wait five seconds.
