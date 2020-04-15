@@ -40,6 +40,7 @@ class Details extends React.Component {
       name,
       media,
     } = this.state;
+
     return loading ? (
       <h1>Loading ...</h1>
     ) : (

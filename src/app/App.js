@@ -1,7 +1,7 @@
 import React from "react";
 import { render } from "react-dom";
 import { Router, Link } from "@reach/router";
-// Reach router is simillar to react router but is better for accesibility
+// Reach router is similar to react router but is better for accesibility
 // Reach router show the route match the most, the order doesn't matter
 
 import SearchParams from "../pages/SearchParams";
