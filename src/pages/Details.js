@@ -4,6 +4,8 @@ import pet from "@frontendmasters/pet";
 import Carousel from "../components/Carousel";
 import ErrorBoundary from "../errors/ErrorBoundary";
 import ThemeContext from "../context/ThemeContext";
+import Modal from "../modal/modal";
+import { navigate } from "@reach/router";
 
 // Function component
 // const Details = (props) => (
@@ -15,7 +17,7 @@ import ThemeContext from "../context/ThemeContext";
 
 // Class component
 class Details extends React.Component {
-  state = { loading: true };
+  state = { isLoading: true, isShowModal: false };
 
   componentDidMount() {
     pet.animal(this.props.id).then(({ animal }) =>
@@ -26,24 +28,30 @@ class Details extends React.Component {
         description: animal.description,
         media: animal.photos,
         breed: animal.breeds.primary,
-        loading: false,
+        isLoading: false,
+        url: animal.url,
       })
     );
   }
 
+  toggleModal = () => this.setState({ isShowModal: !this.state.isShowModal });
+
+  adopt = () => navigate(this.state.url);
+
   render() {
     const {
-      loading,
+      isLoading,
       animal,
       breed,
       location,
       description,
       name,
       media,
+      isShowModal,
     } = this.state;
 
-    return loading ? (
-      <h1>Loading ...</h1>
+    return isLoading ? (
+      <h1>isLoading ...</h1>
     ) : (
       <div className="details">
         <Carousel media={media} />
@@ -52,10 +60,26 @@ class Details extends React.Component {
           <h2>{`${animal} - ${breed} - ${location}`}</h2>
           <ThemeContext.Consumer>
             {([theme]) => (
-              <button style={{ backgroundColor: theme }}>Addopt {name}</button>
+              <button
+                onClick={this.toggleModal}
+                style={{ backgroundColor: theme }}
+              >
+                Adopt {name}
+              </button>
             )}
           </ThemeContext.Consumer>
           <p>{description}</p>
+          {isShowModal && (
+            <Modal>
+              <div>
+                <h1>Would you like to adopt {name} </h1>
+                <div className="buttons">
+                  <button onClick={this.adopt}>Yes</button>
+                  <button onClick={this.toggleModal}>No, I am a monster</button>
+                </div>
+              </div>
+            </Modal>
+          )}
         </div>
       </div>
     );
