@@ -1,5 +1,4 @@
 // Mostly code from reactjs.org/docs/error-boundaries.html
-
 import React from "react";
 import { Link, navigate } from "@reach/router";
 

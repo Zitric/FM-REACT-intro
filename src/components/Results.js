@@ -1,5 +1,6 @@
 import React from "react";
-import Pet from "./Pet";
+
+import Pet from "/components/Pet";
 
 const Results = ({ pets }) => (
   <div className="search">

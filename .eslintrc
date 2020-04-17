@@ -30,6 +30,7 @@
   "settings": {
     "react": {
       "version": "detect"
-    }
+    },
+    "import/resolver": { "parcel": { "rootDir": "src" } }
   }
 }

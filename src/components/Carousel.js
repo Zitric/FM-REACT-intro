@@ -38,6 +38,8 @@ class Carousel extends React.Component {
           {photos.map((photo, index) => (
             <img
               key={photo}
+              role="presentation"
+              // aria-hidden={true}
               onClick={this.handleIndexClick}
               data-index={index}
               src={photo}
