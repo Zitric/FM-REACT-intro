@@ -5,6 +5,8 @@ import Results from "/components/Results";
 import useDropdown from "/components/useDropdown";
 import ThemeContext from "/context/ThemeContext";
 
+// @ts-check
+
 // THIS IS A HOOK
 // location is the current state of location
 // setLocation is a function to update that particular piece of state
