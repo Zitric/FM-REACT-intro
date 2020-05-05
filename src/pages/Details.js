@@ -1,11 +1,17 @@
-import React from "react";
+import React, { lazy } from "react";
 import { navigate } from "@reach/router";
 import pet from "@frontendmasters/pet";
 
 import Carousel from "/components/Carousel";
 import ErrorBoundary from "/errors/ErrorBoundary";
 import ThemeContext from "/context/ThemeContext";
-import Modal from "/modal/modal";
+
+import _ from "lodash";
+import moment from "moment";
+
+console.log(_, moment);
+
+const Modal = lazy(() => import("../modal/modal"));
 
 // Function component
 // const Details = (props) => (
@@ -51,7 +57,7 @@ class Details extends React.Component {
     } = this.state;
 
     return isLoading ? (
-      <h1>isLoading ...</h1>
+      <h2>Is loading ...</h2>
     ) : (
       <div className="details">
         <Carousel media={media} />
