@@ -2,10 +2,10 @@ import React from "react";
 import { navigate } from "@reach/router";
 import pet from "@frontendmasters/pet";
 
-import Carousel from "/components/Carousel";
-import ErrorBoundary from "/errors/ErrorBoundary";
-import ThemeContext from "/context/ThemeContext";
-import Modal from "/modal/modal";
+import Carousel from "../components/Carousel";
+import ErrorBoundary from "../errors/ErrorBoundary";
+import ThemeContext from "../context/ThemeContext";
+import Modal from "../modal/modal";
 
 // Function component
 // const Details = (props) => (
