@@ -6,11 +6,6 @@ import Carousel from "/components/Carousel";
 import ErrorBoundary from "/errors/ErrorBoundary";
 import ThemeContext from "/context/ThemeContext";
 
-import _ from "lodash";
-import moment from "moment";
-
-console.log(_, moment);
-
 const Modal = lazy(() => import("../modal/modal"));
 
 // Function component

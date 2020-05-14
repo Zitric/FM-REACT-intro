@@ -1,12 +1,8 @@
 import React, { useState, lazy, Suspense } from "react";
-import { render } from "react-dom";
 import { Router, Link } from "@reach/router";
 // Reach router is similar to react router but is better for accesibility
 // Reach router show the route match the most, the order doesn't matter
 
-
-import SearchParams from "../pages/SearchParams";
-import Details from "../pages/Details";
 import ThemeContext from "../context/ThemeContext";
 import NavBar from "../components/NavBar";
 

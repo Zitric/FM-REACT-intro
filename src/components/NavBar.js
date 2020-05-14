@@ -18,7 +18,7 @@ const NavBar = () => {
       role="button"
       tabIndex="0"
       onKeyDown={() => {}}
-      // onClick={() => setPadding(padding + 10)}
+      onClick={() => setPadding(padding + 10)}
       css={css`
         background-color: ${colors.secondary};
         padding: ${padding}px;
