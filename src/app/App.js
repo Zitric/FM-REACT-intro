@@ -4,7 +4,11 @@ import { Router, Link } from "@reach/router";
 // Reach router is similar to react router but is better for accesibility
 // Reach router show the route match the most, the order doesn't matter
 
-import ThemeContext from "/context/ThemeContext";
+
+import SearchParams from "../pages/SearchParams";
+import Details from "../pages/Details";
+import ThemeContext from "../context/ThemeContext";
+import NavBar from "../components/NavBar";
 
 const Details = lazy(() => import("../pages/Details"));
 const SearchParams = lazy(() => import("../pages/SearchParams"));
@@ -16,6 +20,7 @@ const App = () => {
     <React.StrictMode>
       <ThemeContext.Provider value={themeHook}>
         <>
+          <NavBar />
           <header>
             <Link to="/">
               <h1 id="something-important">Adopt Me!</h1>
@@ -33,4 +38,4 @@ const App = () => {
   );
 };
 
-render(<App />, document.getElementById("root"));
+export default App;

@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useContext } from "react";
 import pet, { ANIMALS } from "@frontendmasters/pet";
 
-import Results from "/components/Results";
-import useDropdown from "/components/useDropdown";
-import ThemeContext from "/context/ThemeContext";
+import Results from "../components/Results";
+import useDropdown from "../components/useDropdown";
+import ThemeContext from "../context/ThemeContext";
 
 // @ts-check
 
